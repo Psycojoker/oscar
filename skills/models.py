@@ -28,6 +28,9 @@ class StudentSkill(models.Model):
     acquired = models.DateTimeField(default=None, null=True)
     # bad: doesn't support regression
 
+    def __unicode__(self):
+        return "%s - %s - %s" % (self.student, self.skill, "green" if self.acquired else ("orange" if self.tested else "white"))
+
     def go_down_visitor(self, function):
         # protective code against loops in skill tree
         already_done = set()
@@ -35,7 +38,7 @@ class StudentSkill(models.Model):
         def traverse(student_skill):
             function(student_skill)
 
-            for sub_student_skill in StudentSkill.objects.filter(skill__in=student_skill.skill.depends_on.all()):
+            for sub_student_skill in StudentSkill.objects.filter(skill__in=student_skill.skill.depends_on.all(), student=self.student):
                 if sub_student_skill.id not in already_done:
                     already_done.add(sub_student_skill.id)
                     traverse(sub_student_skill)
@@ -49,7 +52,7 @@ class StudentSkill(models.Model):
         def traverse(student_skill):
             function(student_skill)
 
-            for sub_student_skill in StudentSkill.objects.filter(skill__in=student_skill.skill.skill_set.all()):
+            for sub_student_skill in StudentSkill.objects.filter(skill__in=student_skill.skill.skill_set.all(), student=self.student):
                 if sub_student_skill.id not in already_done:
                     already_done.add(sub_student_skill.id)
                     traverse(sub_student_skill)
