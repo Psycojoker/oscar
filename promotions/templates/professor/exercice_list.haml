@@ -1,0 +1,28 @@
+-extends "base.haml"
+
+-block content
+  %h2 Exercices
+  %hr
+
+  -regroup exercice_list by skill as exercices_by_skills
+
+  -for skill in exercices_by_skills
+    %h3
+      =skill.grouper.code
+      %small
+        =skill.grouper.name
+    -for exercice in skill.list
+      %ul
+        %li
+          %a{href: "{% url 'professor_exercice_detail' exercice.pk %}"}
+            Exercice numéro
+            =exercice.id
+
+  %h2 Compétences sans exercices
+
+  %ul
+    -for skill in skills_without_exercices
+      %li
+        =skill.code
+        \-
+        =skill.name

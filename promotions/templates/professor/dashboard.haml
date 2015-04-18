@@ -10,9 +10,14 @@
   %ul
     -for lesson in lessons
       %li
-        %a{href: "{% url 'professor_lesson_detail_view' lesson.pk %}"}= lesson.name
+        %a{href: "{% url 'professor_lesson_detail_view' lesson.pk %}"}
+          =lesson.name
+          -if lesson.students__count
+            \-
+            =lesson.students__count
+            élève{{ lesson.students__count|pluralize }}
 
-  %h2 Ajouter une classe:
+  %h2 Ajouter une classe :
 
   %form.form{action: "", method: "post"}
     -csrf_token
@@ -21,3 +26,10 @@
       %button.btn.btn-primary{type: "submit"}
         Ajouter
     {% endbuttons %}
+
+  %h2 Autres liens
+
+  %ul
+    %li
+      %a{href: "{% url 'professor_exercice_list' %}"}
+        Voir tous les exercices disponibles
