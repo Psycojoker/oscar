@@ -1,7 +1,7 @@
 "":
-type : "radio"
+ type : "radio"
  answers :
- "c'est un polyèdre car il a 9 arêtes" : false 
- " c'est un polyèdre car il a 2 bases isométriques" : false
- "c'est un polyèdre car toutes ses faces sont des polygones" : true
+   "c'est un polyèdre car il a 9 arêtes" : false 
+   " c'est un polyèdre car il a 2 bases isométriques" : false
+   "c'est un polyèdre car toutes ses faces sont des polygones" : true
  
