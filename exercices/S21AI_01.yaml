@@ -1,0 +1,7 @@
+"Première question qui est un choix unique parmis plusieurs questions":
+  type: radio
+  answers:
+    "mauvaise réponse": false
+    "bonne réponse": true
+    "une autre mauvaise réponse": false
+    "encore une": false
