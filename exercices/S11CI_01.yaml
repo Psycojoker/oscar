@@ -1,0 +1,8 @@
+
+"Autre question avec plusieurs bonnes réponses possibles":
+  type: checkbox
+  answers:
+    "une mauvaise réponse": false
+    "une bonne réponse": true
+    "une autre bonne réponse": true
+    "une autre mauvaise réponse": false
