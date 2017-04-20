@@ -1,0 +1,11 @@
+Combien de <b>koalas</b> y a til dans le zoo?:
+  type: radio
+  answers:
+    '10': false
+    '36890123871236452': false
+    '4': true
+Comment s'appelle le koala principal?:
+  type: text
+  answers:
+  - Oscar
+  - Eureduka
