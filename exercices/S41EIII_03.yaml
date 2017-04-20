@@ -1,0 +1,4 @@
+"<b>Déterminez</b> la couleur qui correspond a une frequence de 30 %.":
+   type: text
+   answers:
+    - "rouge"
