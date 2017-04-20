@@ -1,0 +1,13 @@
+Première question qui est un choix unique parmis plusieurs questions:
+  type: radio
+  answers:
+    mauvaise réponse: false
+    bonne réponse: true
+    'une autre: mauvaise réponse': false
+    encore une: false
+Autre question avec plusieurs bonnes réponses possibles:
+  type: text
+  answers:
+  - réponse possible correcte
+  - autre réponse
+  - il est important de lister toutes les réponses possibles de la part des élèves
