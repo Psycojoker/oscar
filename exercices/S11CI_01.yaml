@@ -1,0 +1,4 @@
+Première question qui est un choix unique parmis plusieurs questions:
+  type: text
+  answers:
+  - mauvaise réponse
